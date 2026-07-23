@@ -1,0 +1,69 @@
+import { test, expect } from "@playwright/test";
+
+test("test", async ({ page }) => {
+  await page.goto("https://demo.playwright.dev/todomvc/#/");
+  await page
+    .getByRole("textbox", { name: "What needs to be done?" })
+    .fill("todo 1 ");
+  await page
+    .getByRole("textbox", { name: "What needs to be done?" })
+    .press("Enter");
+  await page
+    .getByRole("textbox", { name: "What needs to be done?" })
+    .fill("todo 2");
+  await page
+    .getByRole("textbox", { name: "What needs to be done?" })
+    .press("Enter");
+  await page
+    .getByRole("listitem")
+    .filter({ hasText: "todo 2" })
+    .getByLabel("Toggle Todo")
+    .check();
+  await page.getByRole("button", { name: "Delete" }).click();
+});
+test("test-2", async ({ page }) => {
+  await page.goto("https://demo.playwright.dev/todomvc/#/");
+  await page.getByRole("textbox", { name: "What needs to be done?" }).click();
+  await page
+    .getByRole("textbox", { name: "What needs to be done?" })
+    .fill("test");
+  await page
+    .getByRole("textbox", { name: "What needs to be done?" })
+    .press("Enter");
+  await page
+    .getByRole("textbox", { name: "What needs to be done?" })
+    .fill("test-2");
+  await page
+    .getByRole("textbox", { name: "What needs to be done?" })
+    .press("Enter");
+  await page.getByRole("textbox", { name: "What needs to be done?" }).fill("o");
+  await page
+    .getByRole("textbox", { name: "What needs to be done?" })
+    .press("Enter");
+  await page.getByRole("textbox", { name: "What needs to be done?" }).fill("l");
+  await page
+    .getByRole("textbox", { name: "What needs to be done?" })
+    .press("Enter");
+  await page.getByRole("textbox", { name: "What needs to be done?" }).fill("l");
+  await page
+    .getByRole("textbox", { name: "What needs to be done?" })
+    .press("Enter");
+  await page.getByRole("textbox", { name: "What needs to be done?" }).fill("k");
+  await page
+    .getByRole("textbox", { name: "What needs to be done?" })
+    .press("Enter");
+  await page.getByRole("checkbox", { name: "Toggle Todo" }).nth(3).check();
+  await page
+    .getByRole("listitem")
+    .filter({ hasText: "test-" })
+    .getByLabel("Toggle Todo")
+    .check();
+  await page.getByRole("textbox", { name: "What needs to be done?" }).click();
+  await page
+    .getByRole("textbox", { name: "What needs to be done?" })
+    .fill("wowo");
+  await page
+    .getByRole("textbox", { name: "What needs to be done?" })
+    .press("Enter");
+  await page.getByRole("button", { name: "Delete" }).click();
+});

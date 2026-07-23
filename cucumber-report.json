@@ -1,0 +1,147 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "checkout;user-able-to-add-product-to-cart",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "User able to add product to cart",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 7724542200
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1501642399
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "the user is on the login page",
+            "match": {
+              "location": "steps\\login.step.ts:9"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 549254000
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "the user submit credentials \"demo01@demo.com\" and \"Welcome1\"",
+            "match": {
+              "location": "steps\\login.step.ts:13"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 4583283100
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the user adds product \"Apple Watch\" to cart",
+            "match": {
+              "location": "steps\\checkout.step.ts:9"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 170480600
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "the user proceeds to checkout",
+            "match": {
+              "location": "steps\\checkout.step.ts:17"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 314913800
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "cardholderName",
+                      "John Doe"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "cardNumber",
+                      "4242424242424242"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "expiryDate",
+                      "12/2026"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "cvv",
+                      "123"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 10,
+            "name": "the user submits payment with credit card details",
+            "match": {
+              "location": "steps\\payment.step.ts:6"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3494661899
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "the user should be redirected to payment success",
+            "match": {
+              "location": "steps\\payment.step.ts:20"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 211199
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "checkout",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Checkout",
+    "tags": [],
+    "uri": "features\\checkout.feature"
+  }
+]
